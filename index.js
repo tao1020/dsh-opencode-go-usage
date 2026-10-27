@@ -7,7 +7,6 @@ import { join } from "node:path";
 import { readFile } from "node:fs/promises";
 import { TypertRemoteService } from "@deepseek-ai/dsh-typert-protocol";
 import { credentialRef } from "@deepseek-ai/dsh-credentials";
-import { settingsNamespace } from "@deepseek-ai/dsh-settings";
 
 const DEFAULT_BASE_URL = "https://opencode.ai/zen/go/v1/usage";
 const DEFAULT_TIMEOUT_MS = 15000;

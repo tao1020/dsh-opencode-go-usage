@@ -29,6 +29,15 @@ dsh plugin --profile web add <仓库地址或本地路径>
 
 重启 `dsh web`，Host 半与客户端 bundle 即会被加载。
 
+## 版本兼容
+
+支持 DSH `0.1.0-rc.6` 及之后版本，含 `0.2.x`。本仓库已适配两处运行时变更：
+
+- `@deepseek-ai/dsh-settings` 不再导出 `settingsNamespace`（本就未使用，已移除该 import）。
+- Typert 严格 codec 现在要求 `create()` 工厂 —— Host 清单（`typert.host.js`）和客户端贡献（`client.js`）里的结果 codec 均改为 `create`，不再用 `schema`。
+
+若 DSH 版本的包范围与 peer 依赖无交集，插件管理器会以「不兼容」拒绝安装；该拦截是刻意设计的，覆盖前请先确认这里。
+
 ## 配置
 
 Host 端可在 `cordis.yml` 的插件行上做配置：

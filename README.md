@@ -29,6 +29,15 @@ Add the plugin row to your profile's patch layer (`$DSH_HOME/profiles/web/cordis
 
 Restart `dsh web` so the host half and the served client bundle are picked up.
 
+## Version compatibility
+
+Works on DSH `0.1.0-rc.6` and later, including `0.2.x`. Two runtime changes are handled here:
+
+- `@deepseek-ai/dsh-settings` no longer exports `settingsNamespace` (the import was unused).
+- Typert strict codecs now require a `create()` factory — the result codec in both the host manifest (`typert.host.js`) and the client contribution (`client.js`) uses `create`, not `schema`.
+
+On a DSH version whose package ranges do not intersect the peers below, the plugin manager refuses the install as incompatible; that gate is intentional, so check this section before overriding it.
+
 ## Configuration
 
 Host-side tunables live on the plugin row in `cordis.yml`:

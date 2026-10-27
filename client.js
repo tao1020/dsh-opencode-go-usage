@@ -26,7 +26,7 @@ window.__ModuleLoader__.load({
           result: {
             mode: "strict",
             typeSymbol: "dsh-opencode-go-usage#OpencodeUsageResult",
-            schema: { parse(value) { return value; } },
+            create: () => ({ parse(value) { return value; } }),
           },
         },
       ],

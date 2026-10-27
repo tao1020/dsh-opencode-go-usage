@@ -36,7 +36,7 @@ export const TYPERT = {
       result: {
         mode: "strict",
         typeSymbol: "dsh-opencode-go-usage#OpencodeUsageResult",
-        schema: resultSchema,
+        create: () => resultSchema,
       },
     },
   ],
